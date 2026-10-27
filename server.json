@@ -1,0 +1,32 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pluginstackai/pluginstack-mcp",
+  "title": "PluginStack",
+  "description": "Search PluginStack's hand-checked directory of MCP servers, AI agent tools and setup guides.",
+  "repository": {
+    "url": "https://github.com/pluginstackai/pluginstack-mcp",
+    "source": "github"
+  },
+  "websiteUrl": "https://www.pluginstackai.com",
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "pluginstack-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "PLUGINSTACK_OFFLINE",
+          "description": "Set to 1 to use only the bundled snapshot and make no network requests.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "name": "pluginstack-mcp",
+  "version": "0.1.0",
+  "mcpName": "io.github.pluginstackai/pluginstack-mcp",
+  "description": "Search PluginStack's free, hand-checked directory of MCP servers, AI plugins, agent tools and setup guides from any MCP client.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "mcp-server",
+    "mcp-directory",
+    "ai-tools",
+    "claude",
+    "cursor",
+    "codex",
+    "pluginstack"
+  ],
+  "homepage": "https://www.pluginstackai.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pluginstackai/pluginstack-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pluginstackai/pluginstack-mcp/issues",
+    "email": "pluginstackai@gmail.com"
+  },
+  "author": "PluginStack <pluginstackai@gmail.com> (https://www.pluginstackai.com)",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "pluginstack-mcp": "dist/index.js"
+  },
+  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "data/directory.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/chmod.mjs",
+    "start": "node dist/index.js",
+    "test": "npm run build && node test/smoke.mjs",
+    "snapshot": "node scripts/snapshot.mjs",
+    "bundle": "npm run build && node scripts/bundle.mjs",
+    "validate:server-json": "node scripts/validate-server-json.mjs",
+    "prepublishOnly": "npm test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@anthropic-ai/mcpb": "^2.1.2",
+    "@types/node": "^22.20.5",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "esbuild": "^0.28.2",
+    "typescript": "~5.9.3"
+  }
+}

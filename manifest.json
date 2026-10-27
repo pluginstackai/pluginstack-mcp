@@ -1,0 +1,55 @@
+{
+  "manifest_version": "0.3",
+  "name": "pluginstack-mcp",
+  "display_name": "PluginStack",
+  "version": "0.1.0",
+  "description": "Search PluginStack's hand-checked directory of MCP servers, AI agent tools and setup guides.",
+  "long_description": "Ask your AI client to find MCP servers and agent tools, get copy-paste install config for Claude Code, Claude Desktop, Cursor, VS Code and Codex, and read PluginStack's setup and troubleshooting guides. Read-only. Data comes from https://www.pluginstackai.com/directory.json, with a bundled snapshot as a fallback. No API key, no account, no tracking.",
+  "author": {
+    "name": "PluginStack",
+    "email": "pluginstackai@gmail.com",
+    "url": "https://www.pluginstackai.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pluginstackai/pluginstack-mcp"
+  },
+  "homepage": "https://www.pluginstackai.com",
+  "documentation": "https://github.com/pluginstackai/pluginstack-mcp#readme",
+  "support": "https://github.com/pluginstackai/pluginstack-mcp/issues",
+  "icon": "icon.png",
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/server/index.js"
+      ]
+    }
+  },
+  "keywords": [
+    "mcp",
+    "directory",
+    "mcp-servers",
+    "ai-tools",
+    "claude",
+    "cursor",
+    "codex",
+    "vscode"
+  ],
+  "license": "MIT",
+  "privacy_policies": [
+    "https://www.pluginstackai.com/privacy/"
+  ],
+  "compatibility": {
+    "platforms": [
+      "darwin",
+      "win32",
+      "linux"
+    ],
+    "runtimes": {
+      "node": ">=18.0.0"
+    }
+  }
+}
